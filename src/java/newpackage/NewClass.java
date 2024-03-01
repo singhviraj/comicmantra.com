@@ -26,10 +26,47 @@ public class NewClass  extends HttpServlet{
     public void doPost(HttpServletRequest req, HttpServletResponse res)throws ServletException, IOException{
          res.setContentType("text/html");
                PrintWriter out = res.getWriter();
-              out.println("<h1>working<h1/>");
-              String name = req.getParameter("cars");
-              out.println(name);
-              String name1 = req.getParameter(name);
-              out.println(name1);
+            //  out.println("<h1>working<h1/>");
+             boolean b = false;
+              String full="";
+              String user = req.getParameter("uname");
+              String pass = req.getParameter("pname");
+              String name = req.getParameter("full");
+              if(pass.equals("bang")){
+                   out.println(name);
+              }
+              else{
+                 out.println("<h1> Kindly enter the connect credentials</h1");
+                 out.println("<h1> If you do not have a password yet , kindly get it from the"
+                         + "nearby francise along with your library card. </h1");
+              }
+         /*     Cookie[] cookies = req.getCookies();
+              if(cookies == null){
+                  out.println("You need to login first");
+                  return;
+              }
+              else{
+                  
+                  for(Cookie c : cookies){
+                       
+                      String temp = c.getName();
+                      if(temp.equals("fullname")){
+                          full = c.getValue();
+                          b = true;
+                      }
+                  }
+              }
+              
+              
+                  if(b){
+                  out.println("<h1>"+full+"</h1>");
+              }
+              
+              
+           //   String name = req.getParameter("cars");
+            //  out.println(name);
+            //  String name1 = req.getParameter(name);
+            //  out.println(name1);  */
+       
     }
 }

@@ -9,14 +9,171 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-            #more {display: none;}
+            .header{
+    position:relative;
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #4527a0;
+    padding:0 25px;
+    transition:0.3s;
+    
+ }
 
+ .logo a {
+    display: block;
+ }
+ .logo a img {
+    display: block;
+    width: 100%;
+ }
+
+ .navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+ }
+
+ .menu{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    z-index: 1;
+    transition: 0.5s;
+ }
+
+ .menu li {
+ list-style-type: none;
+ }
+
+ .menu li a {
+ color:#fff;
+ text-decoration: none;
+ display: block;
+ padding: 40px 25px;
+ font-size: 18px;
+ line-height: 1;
+ transition: 0.3s;
+ }
+
+ .menu li a:hover{
+    box-shadow: 0 -5px 0px #fff inset,
+    500px 0 0 rgba(255,255,255,0.03) inset ;
+    padding: 35px 25px 45px 25px;
+
+ }
+ 
+ .hamburger{
+    position: relative;
+    height: 4px;
+    width: 30px;
+    background: #fff;
+    border-radius: 10px;
+    cursor :pointer;
+    z-index: 2;
+    transition: 0.3s;
+ }
+
+ .hamburger:before,
+ .hamburger:after{
+content: "";
+position: absolute;
+height: 4px;
+right: 0;
+background: #fff;
+border-radius: 10px;
+transition: 0.3s;
+ }
+
+ .hamburger:before{
+    top: -10px;
+    width: 20px;
+ }
+ .hamburger:after{
+    top: 10px;
+    width: 25px;
+     }
+
+.toggle-menu{
+        position:absolute;
+        width: 30px;
+        height: 100%;
+        z-index: 3;
+        cursor: pointer;
+        opacity: 0;
+    } 
+
+   .hamburger,.toggle-menu{
+ display: none;
+   }
+   
+   .navigation input:checked ~ .hamburger{
+    background: transparent;
+   }
+
+   .navigation input:checked ~ .hamburger:before{
+    top:0;
+    transform: rotate(-45deg);
+    width: 30px;
+   }
+
+   .navigation input:checked ~ .hamburger:after{
+    top: 0;
+    transform: rotate(45deg);
+    width: 30px;
+    
+   }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  -
+
+   .navigation input:checked ~ .menu{
+    right:0;
+    box-shadow: -20px 0 40px rgba(0,0,0,0.03);
+   }
+            
+            #more {display: none;}
+          
         </style>
     </head>
     <body>
+       <header class="header">
+<div class="logo">
+    <a href="">
+      
+      
+    </a>
+</div>
+
+<div class="navigation">
+
+    <input type="checkbox" class="toggle-menu">
+    <div class="hamburger"></div>
+    <ul class="menu">
+ <li ><a href="./home.html">Home</a></li>
+ <li ><a href="./products.html">Products</a></li>
+ <li ><a href="./contact.html">Contact</a></li>
+
+    </ul>
+
+</div>
+</header>
+        
         <form action="./login" method="post">
+             <label for="genre">Genre :</label>
+<select name="genre" id="genre" >
+
+  <option value="lorem">lorem</option>
+  <option value="Esperanza">Esperanza</option>
+  <option value=" Malasuerte">Detective Malasuerte</option>
+ 
+</select>
+            <input type="submit" value="Click me" >        <br>
+            <br><!-- comment -->
+            <br>
             
-       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            <img height="200" width="200"src="data:image/jpeg;base64,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"  width="200" height="200" alt="alt"/>  
+            <h1>Lorem</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
             Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas vitae scel
             <span id="dots">...</span></p>
             <input type = hidden name="lorem" 
@@ -24,18 +181,25 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
              Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac.
              In at libero sed nunc venenatis imperdiet sed ornare turpis.
              Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. 
-             Sed dapibus pulvinar nibh tempor porta."      >
+             Sed dapibus pulvinar nibh tempor porta.">
                 
+            <img height ="200" width ="200" src="https://img1.od-cdn.com/ImageType-400/1837-1/AB4/C6B/7E/%7BAB4C6B7E-9AE5-448A-A0BF-72CE2D4BB548%7DImg400.jpg">
+            <h1>Esperanza renace</h1>
+            <p>Esperanza Ortega tiene todos los tesoros que una chica podría desear: hermosos vestidos, una linda casa llena de sirvientes en México, y la promesa de que algún día presidirá Rancho como su madre.
+            <span id="dots">...</span></p>
+            <input type = hidden name="Esperanza" 
+             value="Esperanza Or
+             tega tiene todos los tesoros que una chica podría desear: hermosos vestidos, una linda casa llena de sirvientes en México, y la promesa de que algún día presidirá Rancho como su madre. Pero una tragedia inesperada destruye ese sueño, obligando a Esperanza y su madre a escapar a California, donde tendrán que trabajar en una granja con otros mexicanos. Todos deberán olvidar su pasado y enfrentar las nuevas realidades de su vida: trabajo duro, aceptación y dificultades económicas. Espero descubrir que la verdadera riqueza está en la familia y la comunidad.">
+         
+                         <img width="200" height="200" src ="https://m.media-amazon.com/images/I/61wV+E2nI6L._SY425_.jpg"> 
+             <h1> Detective Malasuerte</h1>
+            <p>Pelirrojo. Pendenciero. Afirma ser “feo, pero de buen cuerpo”. Es el detective Malasuerte, que regresa en la edición definitiva de las aventuras que dibujaron, con tinta indeleble, su delirante y psicodélica Tijuana: Malasuerte en Tijuana, La mujer de los hermanos Reyna y Juan Tres Dieciséis
+            <span id="dots">...</span></p>
+            <input type = hidden name=" Malasuerte" 
+             value="Pelirrojo. Pendenciero. Afirma ser “feo, pero de buen cuerpo”. Es el detective Malasuerte, que regresa en la edición definitiva de las aventuras que dibujaron, con tinta indeleble, su delirante y psicodélica Tijuana: Malasuerte en Tijuana, La mujer de los hermanos Reyna y Juan Tres Dieciséis. Entre personajes carnavalescos como el comisario Nicolás Reyna, el Boticario Jarocho Nazi, un psicópata apodado el Duende y la hermosa alcaldesa de la ciudad, destaca el detective más rudo de la frontera, quien le planta cara a poderosos capitalistas, políticos sin escrúpulos, peligrosos criminales… y a fuerzas aún más oscuras.">
             
-            <label for="cars">Choose a car:</label>
 
-<select name="cars" id="cars" multiple>
-  <option value="lorem">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="opel">Opel</option>
-  <option value="audi">Audi</option>
-</select>
-            <input type="submit" value="Click me" >
+
                     
         </form>
         

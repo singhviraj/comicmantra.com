@@ -26,6 +26,30 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
     
+    
+    <servlet>
+        <servlet-name>three</servlet-name>
+        <servlet-class>newpackage.connect</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>three</servlet-name>
+        <url-pattern>/connect</url-pattern>
+    </servlet-mapping>
+    
+ 
+    <servlet>
+        <servlet-name>four</servlet-name>
+        <servlet-class>newpackage.NewClass2</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>four</servlet-name>
+        <url-pattern>/check</url-pattern>
+    </servlet-mapping>
+    
+   
+    
     <session-config>
         <session-timeout>
             30
